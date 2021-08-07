@@ -14,11 +14,11 @@ def my_setup():
     config = ConfigParser()
 
     config.read("conf/properties.ini")
-    import pdb; pdb.set_trace()
+ #   import pdb; pdb.set_trace()
     return config
 
 wc_creds = get_env_credentials();
-auth = OAuth1(wc_creds['wc_key'],wc_creds['wc_secret'])
+auth = OAuth1(wc_creds['wc_key'], wc_creds['wc_secret'])
 
 def test_getresp(my_setup):
     config = my_setup
@@ -28,8 +28,8 @@ def test_getresp(my_setup):
     get_resp = requests.get(url, params=params)
     print("New change")
 
-    assert get_resp.status_code == 400, \
-        f'Expected status code is 400 but actual status code is {get_resp.status_code}'
+    assert get_resp.status_code == 200, \
+        f'Expected status code is 200 but actual status code is {get_resp.status_code}'
 
 
 def test_postrequest(my_setup):
