@@ -26,6 +26,7 @@ def test_getresp(my_setup):
     params = {'AuthorName': "John Doe"}
 
     get_resp = requests.get(url, params=params)
+    print("New change")
 
     assert get_resp.status_code == 400, \
         f'Expected status code is 400 but actual status code is {get_resp.status_code}'
