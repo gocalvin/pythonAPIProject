@@ -1,0 +1,6 @@
+pytest~=5.3
+requests
+jsonpath
+pytest-html-reporter
+pytest-html
+configparser
